@@ -77,7 +77,7 @@ class CalcTest {
         Assertions.assertEquals(7, result, "Не тот ответ");
     }
 
-    @ParameterizedTest(name = "#{index} - сложение {0} и {1}, ожидаем {2}")
+    @ParameterizedTest(name = "#{index} - вычитание {0} и {1}, ожидаем {2}")
     @CsvSource({"2, 1, 1", "3, 2, 1", "0, 0, 0"})
     @DisplayName("Проверка вычитания 3")
     @Tag("subtract")
