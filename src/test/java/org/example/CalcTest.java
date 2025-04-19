@@ -27,63 +27,62 @@ class CalcTest {
     }
 
     @Test
-    @DisplayName("Проверка суммирования 1")
+    @DisplayName("Проверка суммирования 1+6")
     @Timeout(10)
-    @Tag("summ")
-    void summ1() {
+    @Tag("testsSumOfPositive")
+    void sumOfPositiveEqualSeven() {
         Calc calc = new Calc();
         int result = calc.summ(1, 6);
-        Assertions.assertEquals(7, result, "Не тот ответ");
+        Assertions.assertEquals(7, result, "Сумма не равна 7");
     }
 
-    //    @RepeatedTest(10)
     @Test
-    @DisplayName("Проверка суммирования 2")
+    @DisplayName("Проверка суммирования 1+7")
     @Timeout(10)
-    @Tag("param")
-    void summ2() {
+    @Tag("testsSumOfPositive")
+    void sumOfPositiveEqualEight() {
         Calc calc = new Calc();
-        int result = calc.summ(1, 6);
-        Assertions.assertEquals(7, result, "Не тот ответ");
+        int result = calc.summ(1, 7);
+        Assertions.assertEquals(8, result, "Сумма не равна 8");
     }
 
     @ParameterizedTest(name = "#{index} - сложение {0} и {1}, ожидаем {2}")
     @CsvSource({"1, 2, 3", "-1, 2, 1", "0, 0, 0"})
-    @DisplayName("Проверка суммирования 3")
-    @Tag("param")
-    void summ3(int a, int b, int expectedResult) {
+    @DisplayName("Проверка суммирования")
+    @Tag("testsSumOfPositive")
+    void sumOfPositive(int a, int b, int expectedResult) {
         Calc calc = new Calc();
         int result = calc.summ(a, b);
-        Assertions.assertEquals(expectedResult, result, "Не тот ответ");
+        Assertions.assertEquals(expectedResult, result, "Сумма не равна заданным результатам теста");
     }
 
     @Test
-    @DisplayName("Проверка вычитания 1")
+    @DisplayName("Проверка вычитания 10-4")
     @Timeout(10)
-    @Tag("subtract")
-    void subtraction() {
+    @Tag("testsOfSubtract")
+    void sumOfNegativeEqualFour() {
         Calc calc = new Calc();
-        int result = calc.subtraction(13, 6);
-        Assertions.assertEquals(7, result, "Не тот ответ");
+        int result = calc.subtraction(10, 6);
+        Assertions.assertEquals(4, result, "Разность не равна 4");
     }
 
     @Test
-    @DisplayName("Проверка вычитания 2")
+    @DisplayName("Проверка вычитания 13-6")
     @Timeout(10)
-    @Tag("subtract")
-    void subtraction2() {
+    @Tag("testsOfSubtract")
+    void sumOfNegativeEqualSeven() {
         Calc calc = new Calc();
         int result = calc.subtraction(13, 6);
-        Assertions.assertEquals(7, result, "Не тот ответ");
+        Assertions.assertEquals(7, result, "Разность не равна 7");
     }
 
     @ParameterizedTest(name = "#{index} - вычитание {0} и {1}, ожидаем {2}")
     @CsvSource({"2, 1, 1", "3, 2, 1", "0, 0, 0"})
-    @DisplayName("Проверка вычитания 3")
-    @Tag("subtract")
-    void subtraction3(int a, int b, int expectedResult) {
+    @DisplayName("Проверка вычитания")
+    @Tag("testsOfSubtract")
+    void sumOfNegative(int a, int b, int expectedResult) {
         Calc calc = new Calc();
         int result = calc.subtraction(a, b);
-        Assertions.assertEquals(expectedResult, result, "Не тот ответ");
+        Assertions.assertEquals(expectedResult, result, "Разность не равна заданным результатам теста");
     }
 }

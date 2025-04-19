@@ -6,7 +6,7 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @SelectPackages("org.example")
-@IncludeTags("param")
+@IncludeTags("testsSumOfPositive")
 public class TestSuite {
 }
 
